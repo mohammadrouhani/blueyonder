@@ -1,0 +1,11 @@
+torch>=2.2
+transformers>=4.44.2
+datasets>=2.20.0
+accelerate>=0.33.0
+peft>=0.12.0
+bitsandbytes>=0.43.0 ; platform_system != "Darwin"
+evaluate>=0.4.2
+numpy>=1.26
+tqdm>=4.66
+pyyaml>=6.0.1
+pandas>=2.2

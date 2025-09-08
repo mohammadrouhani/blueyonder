@@ -1,0 +1,44 @@
+seed: 42
+device: auto
+
+model_name: microsoft/Phi-tiny-MoE-instruct
+trust_remote_code: true
+load_in_4bit: true
+bf16: false
+fp16: true
+use_lora: true
+lora:
+  r: 8
+  alpha: 16
+  dropout: 0.05
+  target_modules: ["q_proj","k_proj","v_proj","o_proj","gate_proj","up_proj","down_proj"]
+
+max_new_tokens: 128
+temperature: 0.0
+top_p: 1.0
+
+dataset_name: gsm8k
+dataset_config: main
+train_samples: 1000
+eval_samples: 200
+prompt_style: "cot"
+
+ppo:
+  batch_size: 8
+  mini_batch_size: 2
+  update_epochs: 2
+  gamma: 1.0
+  lam: 1.0
+  clip_range: 0.2
+  kl_coef: 0.02
+  entropy_coef: 0.01
+  learning_rate: 1.5e-5
+  weight_decay: 0.0
+  grad_accum_steps: 8
+  max_steps: 1500
+
+log_dir: runs
+ckpt_dir: checkpoints
+save_steps: 200
+eval_every: 200
+wandb_project: null
