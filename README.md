@@ -52,6 +52,7 @@ The pre-trained model is 👉 [huihui-ai/Huihui-MoE-1B-A0.6B-SFT](https://huggin
 - Lightweight transformer (~1B parameters) with MoE, feasible on a single GPU.  
 - Router mechanism selects **top-k experts per token**, balancing efficiency and specialization.  
 - Widely available on Hugging Face, ensuring reproducibility and extension.  
+![diagram](https://github.com/user-attachments/assets/989526eb-0846-4b41-99df-cab498fd9d54)
 
 ### Sparse MoE
 - **Gate:** `Linear(1024 → 3)` → logits over 3 experts; top-k (usually k=1 or 2) chosen per token.  
