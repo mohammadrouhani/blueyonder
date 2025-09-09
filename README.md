@@ -114,6 +114,9 @@ This setup balances efficiency with stability, while ensuring the model sees the
 - **Value Prediction Loss:** The value head predicts the return for each prompt/output, with the target set to rewards_centered (the raw reward for K=1; ow. reward - group mean). 
 - **Policy Gradien Loss:** The policy increases or decreases token probabilities in proportion to the advantage (rewards_centered − value prediction)
 - **KL Divergence Loss**: A regularizer that penalizes divergence from the frozen reference model, keeping updates stable and preventing drift (across batches).
+
+---
+  
 ## 📌 Notes
 - The value prediction loss updates the value head but policy gradient loss updates the policy.
 - We do not use the raw reward to update the policy because it can be unstable moving from one batch to another.
